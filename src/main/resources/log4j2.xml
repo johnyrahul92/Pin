@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{UUID} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+		<File name="PinByWeb" fileName="/Users/gulfbank/Desktop/RahulJohny/logs/PinByWeb.log">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{UUID} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		
+		
+	</Appenders>
+	<Loggers>		 
+		<Logger name="com.pinbyweb" additivity="false">			            
+			<AppenderRef ref="PinByWeb" level="debug" />
+			<AppenderRef ref="Console" />			        
+		</Logger>	
+		
+
+		<Root level="DEBUG" includeLocation="false">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
